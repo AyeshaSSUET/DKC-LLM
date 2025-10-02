@@ -1,5 +1,5 @@
 embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
-generator_model: "google/flan-t5-small"
+generator_model: "google/gemma-3n-E4B-it-litert-preview"
 device: "cuda"
 faiss_index_path: "artifacts/faiss_index_bankfaqs.index"
 cache_threshold_vc_rag: 0.98
