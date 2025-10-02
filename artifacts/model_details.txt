@@ -1,0 +1,4 @@
+model_name: Gemma3n (replace if different)
+parameter_count: UNKNOWN
+quantization: none
+notes: Replace with real model details and commands used for timing.
