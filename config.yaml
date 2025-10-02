@@ -1,0 +1,12 @@
+embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+generator_model: "google/flan-t5-small"
+device: "cuda"
+faiss_index_path: "artifacts/faiss_index_bankfaqs.index"
+cache_threshold_vc_rag: 0.98
+cache_threshold_dkc: 0.85
+top_k_retriever: 5
+top_k_rerank: 3
+ttl_seconds: 86400
+drift_batch_check: 100
+quantized: false
+seed: 42
