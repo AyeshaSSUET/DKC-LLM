@@ -1,4 +1,33 @@
-model_name: Gemma3n (replace if different)
-parameter_count: UNKNOWN
-quantization: none
-notes: Replace with real model details and commands used for timing.
+# Model Details for Reproducibility
+
+model_name: google/gemma-3n-E4B-it-litert-preview
+parameter_count: 4B          # replace with actual number if different
+architecture: decoder-only Transformer
+release_source: [link to HF / Zenodo / internal repo if private]
+
+# Quantization / Precision
+quantization: INT8           # set to FP16, FP32, or INT8 depending on what you used
+library_used: bitsandbytes   # e.g., bitsandbytes, ONNX Runtime, TensorRT
+batch_size: 1
+max_sequence_length: 20      
+
+# Hardware & Software Environment
+gpu_model: NVIDIA Quadro P6000 (24GB)
+cuda_version: 12.1
+driver_version: 535.xx
+torch_version: 2.1.0
+transformers_version: 4.34.0
+os: Ubuntu 22.04
+
+# Latency Benchmark Notes
+- Benchmark measured with 100 warmup runs + 1000 timed runs.
+- Latency values reported are Avg, P50, P95, P99.
+- Timing harness: scripts/benchmark.py (this repo).
+- Raw latency logs released in artifacts/bench_*.json.
+
+# Additional Notes
+- Retrieval embeddings: sentence-transformers/all-MiniLM-L6-v2
+- FAISS index: inner product normalized
+- Drift detection: every 100 queries, TTL = 24h
+- Cache thresholds: VC-RAG = 0.98, DKC = 0.85
+
